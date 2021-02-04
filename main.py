@@ -127,6 +127,7 @@ def handle_page_url(site, path):
 
     lines.append("")
     lines.append("=> /" + site + " Back to " + site) 
+    lines.append(f"=> https://{site}/{path} See original post on " + sites[site].site_title)
 
     body = "\n".join(lines)
     return Response(Status.SUCCESS, "text/gemini", body)
