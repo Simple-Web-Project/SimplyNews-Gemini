@@ -7,6 +7,17 @@ import datetime
 import config
 
 
+page_header = """```
+.d8888. d888888b .88b  d88. d8888b. db      db    db      d8b   db d88888b db   d8b   db .d8888. 
+88'  YP   `88'   88'YbdP`88 88  `8D 88      `8b  d8'      888o  88 88'     88   I8I   88 88'  YP 
+`8bo.      88    88  88  88 88oodD' 88       `8bd8'       88V8o 88 88ooooo 88   I8I   88 `8bo.   
+  `Y8b.    88    88  88  88 88~~~   88         88         88 V8o88 88~~~~~ Y8   I8I   88   `Y8b. 
+db   8D   .88.   88  88  88 88      88booo.    88         88  V888 88.     `8b d8'8b d8' db   8D 
+`8888Y' Y888888P YP  YP  YP 88      Y88888P    YP         VP   V8P Y88888P  `8b8' `8d8'  `8888Y' 
+```
+"""
+
+
 actual_sites = {}
 for link in sites.keys():
     site = sites[link]
@@ -33,6 +44,7 @@ app = JetforceApplication()
 @app.route("", strict_trailing_slash=False)
 def index(request):
     lines = [
+        page_header,
         "# This is SimplyNews",
         "SimplyNews is a gemini hole to read articles from article-based websites. Without JavaScript, ads and completely text-based. (duh!)",
         "",
