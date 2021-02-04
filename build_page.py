@@ -21,7 +21,11 @@ def build_page(data):
         elif t == "linebreak":
             l.append("")
         elif t == "image":
-            l.append("=> " + str(m["src"]) + " (Image) " + str(m["alt"]))
+            if 'alt' in m.keys():
+                alt = m['alt']
+            else:
+                alt = ""
+            l.append("=> " + str(m["src"]) + " (Image) " + alt)
         elif t == "video":
             l.append("=> " + str(m["src"]) + " (Video)")
         elif t == "iframe":
