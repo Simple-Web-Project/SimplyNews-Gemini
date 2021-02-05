@@ -146,6 +146,12 @@ def handle_page_url(site, path):
 
 
 if __name__ == "__main__":
-    server = GeminiServer(app)
+    import argparse
+    parser = argparse.ArgumentParser(description='Gemini frontend for SimplyNews')
+    parser.add_argument('hostname', default='localhost', metavar='HOSTNAME', type=str)
+    parser.add_argument('port', default=1956, metavar='PORT', type=int)
+
+    args = parser.parse_args()
+    server = GeminiServer(app, port=args.port, hostname=args.hostname)
     server.run()
 
