@@ -46,7 +46,7 @@ def index(request):
     lines = [
         page_header,
         "# This is SimplyNews",
-        "SimplyNews is a gemini hole to read articles from article-based websites. Without JavaScript, ads and completely text-based. (duh!)",
+        "SimplyNews is a gemini capsule to read articles from article-based websites. Without JavaScript, ads and completely text-based. (duh!)",
         "",
         "## List of supported sites",
     ]
