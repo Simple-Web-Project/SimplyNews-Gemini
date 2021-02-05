@@ -47,6 +47,7 @@ def index(request):
         page_header,
         "# This is SimplyNews",
         "SimplyNews is a gemini capsule to read articles from article-based websites. Without JavaScript, ads and completely text-based. (duh!)",
+        "NOTE: SimplyNews is in a very early stage of development, please be aware that almost certainly you are going to encounter bugs.",
         "",
         "## List of supported sites",
     ]
