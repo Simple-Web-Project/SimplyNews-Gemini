@@ -1,10 +1,10 @@
 def build_page(data):
     l = []
-    l.append("# " + data["title"])
+    l.append("# {}".format(data["title"]))
     
     if "subtitle" in data.keys():
-        l.append("## " + data["subtitle"])
-    l.append("Last updated " + data["last_updated"] + " by " + data["author"])
+        l.append("## {}".format(data["subtitle"]))
+    l.append("Last updated {} by {}".format(data["last_updated"], data["author"]))
     l.append("")
 
     for m in data["article"]:
@@ -15,35 +15,34 @@ def build_page(data):
         t = m["type"]
 
         if t == "paragraph":
-            l.append(m["value"] + "\n")
+            l.append("{}\n".format(m["value"]))
         elif t == "text":
             l.append(m["value"])
         elif t == "linebreak":
             l.append("")
         elif t == "image":
+            alt = ""
             if 'alt' in m.keys():
                 alt = m['alt']
-            else:
-                alt = ""
-            l.append("=> " + str(m["src"]) + " (Image) " + alt)
+            l.append("=> {} (Image) {}".format(m["src"], alt))
         elif t == "video":
-            l.append("=> " + str(m["src"]) + " (Video)")
+            l.append("=> {} (Video)".format(m["src"]))
         elif t == "iframe":
-            l.append("=> " + str(m["src"]) + " (Embedded Media)")
+            l.append("=> {} (Embedded Media)".format(m["src"]))
         elif t == "link":
-            l.append("=> " + str(m["href"]) + " " + str(m["value"]))
+            l.append("=> {} {}".format(m["href"], m["value"]))
         elif t == "strong":
-            l.append("*" + m["value"] + "*")
+            l.append("*{}*".format(m["value"]))
         elif t == "em":
-            l.append("_" + m["value"] + "_")
+            l.append("_{}_".format(m["value"]))
         elif t == "blockquote":
             text = m["value"].replace("\n", "\n> ")
             l.append(text)
         elif t == "code":
-            l.append("```\n" + m["value"] + "\n```")
+            l.append("```\n{}\n```".format(m["value"]))
         elif t == "unsorted list":
             for entry in m["entries"]:
-                l.append("* " + entry["value"])
+                l.append("* {}".format(entry["value"]))
         elif t == "header":
             prepend = '#' * int((m['size'])[1]) + " "
             l.append(prepend + m['value'])
