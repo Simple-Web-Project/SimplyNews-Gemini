@@ -28,3 +28,5 @@ if hosting a service that rehosts content from other websites is legal.
 
 We have warned you.
 
+# CONTACT
+Contact us on our IRC channel: #simple-web on freenode
