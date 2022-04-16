@@ -59,7 +59,7 @@ def index(request):
         "SimplyNews is part of the Simple Web project",
         "Do you have problems? Do you want a site to be added? Message os on our IRC (#simple-web on irc.libera.chat)"
         "",
-        "=> https://git.sr.ht/~metalune/simplynews_gemini Source Code for this Website"
+        "=> https://codeberg.org/SimpleWeb/SimplyNews-Gemini Source Code for this Capsule"
     ]
     
     body = "\n".join(lines)
